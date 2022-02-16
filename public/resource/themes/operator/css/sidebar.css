@@ -1,0 +1,113 @@
+/* CSS Document */
+/* created by chow-2011 */
+
+.sidebar {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    overflow: hidden;
+    background-color: #2E2E2E;
+}
+
+/* sidebar menu */
+
+.side-menu {
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.side-menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+side-menu li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.side-menu a {
+    margin: 0;
+    padding: 15px 10px;
+    color: #ffffff;
+    display: block;
+    text-decoration: none;
+    font-family: arial,sans-serif;
+    font-size: 12px;
+}
+
+.side-menu a:hover {
+    color: #fff;
+    background-color: #4d4d4d;
+}
+
+.side-menu a.side-active {
+    color: #ffffff;
+    background-color: #0E6390;
+    background-image: url("../img/side-menu-a-active.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    font-weight: bold;
+}
+
+.side-menu a.parent {
+    background-image: url("../img/arrow-right-menu.png");
+    background-position: 180px center;
+    background-repeat: no-repeat;
+}
+
+.side-menu a.down {
+    background-image: url("../img/arrow-down-menu.png");
+    background-position: 180px center;
+    background-repeat: no-repeat;
+}
+
+.side-menu a img {
+    margin: 0 5px 0 0;
+    padding: 0;
+    border: none;
+    vertical-align: bottom;
+    height: 16px;
+}
+
+.side-menu ul.side-menu-child {
+    display: none;
+    background-color: #444;
+}
+
+.side-menu ul.show {
+    display: block;
+}
+
+.side-menu ul.side-menu-child li {
+
+}
+
+.side-menu ul.side-menu-child li a {
+    display: block;
+    margin: 0;
+    padding: 8px 10px 8px 35px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+    font-size: 11px;
+    background-image: url("../img/side-menu-a-child.png");
+    background-position: 15px center;
+    background-repeat: no-repeat;
+}
+
+.side-menu ul.side-menu-child li a:hover {
+    color: #fff;
+    background-color: #3294C8;
+}
+
+.side-menu ul.side-menu-child li a.side-active {
+    color: #fff;
+    background-color: #3294C8;
+    background-image: url("../img/side-menu-a-child-active.png");
+    background-position: 15px center;
+    background-repeat: no-repeat;
+}

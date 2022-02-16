@@ -1,0 +1,214 @@
+/* CSS Document */
+/* created by chow-2011 */
+
+.common {
+    margin: 0;
+    padding: 0;
+    font-family: tahoma;
+    background-image: url("../img/common-bg.png");
+    background-position: left;
+    background-repeat: repeat-y;
+    background-color: #E9F0F9;
+}
+
+.page {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    background-color: #E9F0F9;
+}
+
+.header {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 40px;
+    background-color: #333;
+    background-image: url("../img/header-bg-black.png");
+    background-position: left;
+    background-repeat: repeat-x;
+    color: #eee;
+}
+
+.header-title {
+    float: left;
+    margin: 0;
+    padding: 10px;
+    height: 20px;
+    width: 330px;
+}
+
+.header-title a {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-title img {
+    margin: 0 5px 0 0;
+    padding: 0;
+    vertical-align: bottom;
+    border: none;
+    height: 20px;
+}
+
+.header-profile {
+    float: right;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    width: 800px;
+}
+
+.header-profile ul {
+    margin: 0;
+    padding: 0 6px 0 0;
+    text-align: right;
+    list-style: none;
+}
+
+.header-profile li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.header-profile li a {
+    float: right;
+    display: block;
+    margin: 0;
+    padding: 12px 10px 10px 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    width: auto;
+    height: 20px;
+}
+
+.header-profile li a:hover {
+    background-color: #2B2F35;
+}
+
+.header-profile li a.users {
+    width: auto;
+    padding: 10px 10px 10px 25px;
+    background-image: url("../img/arrow-down-user.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+}
+
+.header-profile li a.users:hover {
+    background-color: #2B2F35;
+}
+
+.header-profile li a.active {
+}
+
+.header-profile li a img {
+    margin: 0 0 0 3px;
+    padding: 0;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.header-profile li a img.users {
+    margin: 0;
+    padding: 0;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.header-profile-detailed {
+    right: 5px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    background-color: #2B2F35;
+    width: 242px;
+    font-size: 11px;
+    border: 1px solid #373B41;
+    border-top: none;
+    z-index: 99999999;
+}
+
+.header-profile-detailed ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header-profile-detailed li {
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+.header-profile-detailed li a{
+    display: block;
+    margin: 0;
+    padding: 7px 10px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #555;
+}
+
+.header-profile-detailed li a:hover{
+    background-color: #EEEFF3;
+}
+
+.header-profile-detailed li a.logout{
+    border-top: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.header-profile-detailed li a.logout:hover{
+    border-top: 1px solid #FE1010;
+    background-color: #FF702A;
+    color: #fff;
+}
+
+.header-profile-detailed li a img{
+    margin: 0 5px 0 0;
+    padding: 0;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.header-profile-detailed li.hp-user-profile {
+    margin: 0;
+    padding: 10px 10px 15px 10px;
+    clear: both;
+}
+
+.header-profile-detailed li.hp-user-profile img {
+    float: left;
+    margin: 0 4px 0 0;
+    padding: 0;
+    border: 1px solid #eee;
+    height: 32px;
+    background-color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.main-content {
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/common-bg.png");
+    background-position: left;
+    background-repeat: repeat-y;
+    background-color: #E8E8E9;
+    clear: both;
+}
+
+.clear {
+    clear: both;
+}
+
+/*
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+*/

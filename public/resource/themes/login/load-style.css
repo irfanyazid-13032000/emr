@@ -1,0 +1,297 @@
+/* CSS Document */
+/* Create by kintar-2013 */
+
+/* common	---------------------------------------------------------------- */
+
+.common {
+    margin: 0;
+    padding: 0;
+    background-image: url("img/common-bg.png");
+    background-repeat: repeat;
+    background-color: #ffffff;
+    font-family: arial;
+    font-size: 12px;
+}
+
+.clear {
+    clear: both;
+}
+
+.footer {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #EDEFF4;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #CCCCCC;
+}
+
+.footer p{
+    margin: 0;
+    padding: 0 20px;
+    line-height: 18px;
+    color: #3B5998;
+    font-size: 11px;
+    bottom: 0;
+    position: absolute;
+}
+
+/* content	---------------------------------------------------------------- */
+
+
+
+/* sidebar	---------------------------------------------------------------- */
+
+
+
+/* table	---------------------------------------------------------------- */
+
+
+
+/* element	---------------------------------------------------------------- */
+
+.login-wrap {
+    margin: 100px auto;
+    padding: 0;
+    width: 390px;
+    overflow: hidden;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-family: Arial;
+}
+
+.login-head {
+    margin: 0;
+    padding: 5px 10px;
+    background-image: url("img/login-head-bg.png");
+    background-repeat: repeat;
+    background-position: bottom left;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #5E6772;
+}
+.blue {
+    background-color: #2980B9;
+    background-image: none;
+}
+.login-head img {
+    float: left;
+    margin: 0 10px 0 0;
+    padding: 0;
+}
+
+.login-head h1 {
+    margin: 0;
+    padding: 5px 0;
+    color: #FFF;
+    font-size: 14px;
+    text-shadow: 0 -1px 0 #000;
+}
+.login-head h2 {
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+    font-size: 15px;
+    text-shadow: 0 -1px 0 #000;
+}
+
+.login-body {
+    padding: 0;
+    color: #365074;
+    overflow: hidden;
+    background-image: url("img/login-body-bg.png");
+    background-repeat: repeat-x;
+    background-position: bottom left;
+    background-color: #FDFDFD;
+    border-left: 1px solid #CBCFD4;
+    border-right: 1px solid #CBCFD4;
+}
+
+.login-body label {
+    margin: 0;
+    padding: 3px 0;
+    display: block;
+    clear: both;
+    float: left;
+    color: #494B50;
+    width: 90px;
+}
+
+.login-body p {
+    margin: 0 0 10px 0;
+    padding: 0 0 10px 0;
+}
+
+.login-body p img {
+    float: left;
+    margin: 0px 5px 5px 0px;
+    padding: 0px;
+}
+
+.login-body a {
+    color: #657ACF;
+    text-decoration: underline;
+}
+
+.login-body a:hover {
+    color: #3B5998;
+    text-decoration: none;
+}
+
+.login-body strong {
+    color: #E33C0F;
+}
+
+.login-body input[type="text"], .login-body input[type="password"] {
+    float: left;
+    width: 186px;
+    font-size: 12px;
+    margin: 0 0 15px 0;
+    padding: 5px;
+    border: 1px solid #CDCDCD;
+    background-image: url("img/input-bg.png");
+    background-repeat: repeat-x;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 #DCDDDD;
+}
+
+.login-body select {
+    float: left;
+    width: 198px;
+    height: 28px;
+    margin: 0 0 15px 0;
+    padding: 5px;
+    font-size: 12px;
+    font-family: arial;
+    border: 1px solid #CDCDCD;
+    background-image: url("img/input-bg.png");
+    background-repeat: repeat-x;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 #DCDDDD;
+}
+.login-body select option {
+    font-family: arial;
+    padding: 5px 0;
+}
+
+.login-body input[type="submit"] {
+    float: right;
+    margin: 0;
+    padding: 0;
+    height: 32px;
+    width: 101px;
+    background-image: url("img/bg-button.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    border: none;
+    cursor: pointer;
+}
+.login-body input[type="submit"]:hover {
+    background-image: url("img/bg-button.png");
+    background-repeat: no-repeat;
+    background-position: 0 -32px;
+}
+.login-body input[type="submit"]:active {
+    background-image: url("img/bg-button.png");
+    background-repeat: no-repeat;
+    background-position: 0 -64px;
+}
+
+.login-body form {
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+.content-left {
+    margin: 0 auto;
+    padding: 20px;
+    width: 288px;
+}
+
+.content-left h1 {
+    margin: 0 0 20px 0;
+    padding: 0 0 20px;
+    font-family: arial;
+    font-size: 16px;
+    color: #7E8085;
+    border-bottom: 1px solid #E6E7E7;
+}
+.content-left action {
+    margin: 0;
+    padding: 0;
+}
+.content-right {
+    float: right;
+    width: 230px;
+    margin: 0;
+    min-height: 177px;
+    padding: 20px;
+    width: 190px;
+    background-image: url("img/content-right-bg.png");
+    background-repeat: repeat-x;
+    border-left: 1px solid #F7F8F9;
+}
+.content-right h2 {
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+    font-size: 15px;
+    border-bottom: 1px solid #E6E7E7;
+    color: #7E8085;
+}
+.content-right p {
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: #909396;
+}
+
+.content-right span.error {
+    color: #C83D20;
+}
+
+.login-footer {
+    margin: -2px 0 0;
+    padding: 0;
+    background-image: url("img/login-footer-bg.png");
+    background-repeat: no-repeat;
+    height: 10px;
+    width: 390px;
+}
+
+.alert {
+    margin: 0;
+    padding: 10px 20px;
+    background-color: #F1F3F4;
+    border-bottom: 1px solid #E6E7E7;
+}
+.alert h2 {
+    font-size: 13px;
+    margin: 0 0 10px 0;
+    color: #C0361A;
+}
+.alert p {
+    margin: 0 0 5px 0;
+    padding: 0;
+}
+.link {
+    background-color: #F1F3F4;
+    border-top: 1px solid #E6E7E7;
+    margin: 0;
+    padding: 20px;
+}
+
+.link a {
+    display: block;
+    text-align: right;
+    width: 288px;
+    color: #16A287;
+    text-decoration: none;
+    font-weight: bold;
+}
+.link a:hover {
+    text-decoration: underline;
+}
+.link a:active {
+
+}

@@ -1,0 +1,481 @@
+
+/* info */
+.posko-info-header-lebaran {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/posko-info-header-bg-lbrn.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-color: #579356;
+    color: #FFF;
+}
+.posko-info-header-lebaran p {
+    color: #E5EB91;
+}
+
+.posko-info-header-natal-tahunbaru {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/posko-info-header-bg-nataltahunbaru.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-color: #6D0000;
+    color: #FFF;
+}
+.posko-info-header-natal-tahunbaru p {
+    color: #F8710D;
+}
+
+.posko-info-header-haji {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/posko-info-header-bg-haji.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-color: #ACFFFF;
+    color: #3D3C41;
+}
+.posko-info-header-haji p {
+    color: #0E6390;
+}
+.posko-info-header-nyepi {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/posko-info-header-bg-nyepi.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-color: #EFBE00;
+    color: #010301;
+}
+.posko-info-header-nyepi p {
+    color: #94520F;
+}
+
+.posko-info-header-title {
+    float: left;
+    margin: 0;
+    padding: 5px 5px 5px 10px;
+}
+
+.posko-info-header-title h3 {
+    font-family: georgia;
+    font-size: 28px;
+    font-weight: normal;
+    margin: 0 0 5px;
+    padding: 0;
+}
+
+.posko-info-header-title p {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.posko-info-header-title p span {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    color: #006699;
+    font-weight: bold;
+}
+
+h3.posko-info-airport-header {
+    margin: 5px 0 0 0;
+    padding: 5px 5px 10px;
+    font-size: 14px;
+    color: #4B911C;
+}
+
+.posko-info-box {
+    float: left;
+    margin: 0;
+    padding: 5px;
+    width: 62%;
+    background-color: #4692B9;
+    font-size: 12px;
+    border-top: 3px solid #0E608B;
+}
+
+.posko-info-box h3 {
+    margin: 0 0 5px 0;
+    padding: 0;
+}
+
+.posko-info-post {
+    margin: 0;
+    padding: 5px;
+    background-color: #FFF;
+    border-bottom: 1px solid #4692B9;
+}
+
+.posko-info-post p {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.posko-info-post img {
+    border: none;
+    vertical-align: middle;
+}
+
+.posko-info-post img.img-user {
+    float: right;
+    margin: 0;
+    padding: 0;
+    height: 48px;
+    border: none;
+}
+
+.posko-info-post img.icon {
+    height: 12px;
+}
+
+.posko-info-post .box-collapse {
+    margin: 0;
+    padding: 0 0 0 18px;
+    background-image: url('../img/small-add.png');
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+
+.posko-info-post .box-uncollapse {
+    margin: 0;
+    padding: 0 0 0 18px;
+    background-image: url('../img/small-delete.png');
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+
+.posko-hide {
+    display: none;
+}
+
+.posko-show {
+    display: block;
+}
+
+.posko-red a {
+    color: #C63434 !important;
+}
+
+.posko-indicator {
+    margin: 5px 0;
+    padding: 0;
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.posko-indicator ul {
+    margin: 0;
+    padding: 0;
+    display: table-row;
+}
+
+.posko-indicator li {
+    margin: 0;
+    padding: 0;
+    display: table-cell;
+    text-align: center;
+}
+
+.posko-indicator li a {
+    margin: 0;
+    padding: 0 2px;
+    display: block;
+    line-height: 28px;
+    border-left: 1px solid #0E608B;
+    border-right: 1px solid #448FB4;
+    background-image: url('../img/indicator-bg.png');
+    background-repeat: repeat-x;
+    color: #FFF;
+}
+
+.posko-indicator li a:hover {
+    background: #4692B9;
+    text-decoration: none;
+}
+
+.posko-indicator li a.current {
+    padding: 0 5px;
+    background-color: #4692B9;
+    background-image: none;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.posko-indicator li a span.warning {
+    margin: 0;
+    padding: 0 24px 2px 0;
+    background-image: url('../img/warning-icon.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    height: 12px;
+    width: 12px;
+}
+
+.posko-indicator li a span.complete {
+    margin: 0;
+    padding: 0 24px 2px 0;
+    background-image: url('../img/complete-icon.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    height: 12px;
+    width: 12px;
+    color: #FFF;
+}
+
+.posko-indicator li:first-child a {
+}
+
+.posko-indicator li:last-child a {
+    border-right: 1px solid #C8E4F1;
+}
+
+/*Laporan*/
+h3.info-airport-header {
+    background-image: url("../img/info-airport-header-bg.png");
+    background-position: left top;
+    background-repeat: repeat-x;
+    color: #CC6600;
+    font-size: 14px;
+    margin: 5px 0 0;
+    padding: 5px 5px 10px;
+}
+.info-airport {
+    background-color: #F4F4F4;
+    border-top: 2px solid #DDDDDD;
+    float: left;
+    margin: 0;
+    padding: 0px;
+    width: 50%;
+}
+.info-airport h2 {
+    color: #555555;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 4px;
+    padding: 0;
+}
+.left {
+    margin-right: 0px;
+}
+
+/* info right */
+.posko-info-box-right {
+    float: right;
+    width: 36%;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.posko-info-box-check {
+    float: right;
+    margin: 0;
+    padding: 0;
+    position: inherit;
+}
+
+.posko-info-box-check a {
+    display: inline-block;
+    margin: 25px 25px 0 0;
+    padding: 0;
+    background-image: url('../img/info-cek-button-bg.png');
+    background-repeat: repeat-x;
+    background-position: top left;
+    line-height: 18px;
+    color: #000;
+    font-weight: bold;
+    font-size: 12px;
+    border: 1px solid #E8B463;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.posko-info-box-check a:hover {
+    text-decoration: none;
+}
+
+.posko-info-box-check a:active {
+    background-image: url('../img/info-cek-button-bg.png');
+    background-repeat: repeat-x;
+    background-position: bottom left;
+}
+
+.posko-info-box-check a span {
+    display: block;
+    min-height: 16px;
+    padding: 3px 20px;
+    white-space: normal;
+}
+
+.posko-info-box-progress {
+    margin: 0;
+    padding: 5px;
+    background-color: #4692B9;
+    border-top: 3px solid #0E608B;
+}
+
+.posko-info-box-progress span.progress-date {
+    float: left;
+    margin: -6px 10px 0 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #006699;
+}
+
+.posko-info-box-progress span.progress-meter {
+    float: left;
+    margin: 5px 5px 10px 0;
+    overflow: hidden;
+    width: 40%;
+    border: 1px solid #0E608B;
+    height: 12px;
+    background-color: #FFF;
+}
+
+.posko-info-box-progress span.has-progress {
+    display: block;
+    height: 12px;
+    background-image: url('../img/progress-meter-bg.png');
+    background-repeat: repeat-x;
+    border-right: 1px solid #0E608B;
+}
+
+.posko-info-box-progress p.progress {
+    vertical-align: top;
+    margin-top: 3px;
+    color: #FFF;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.posko-info-box-progress h4 {
+    margin: 0 0 5px;
+    padding: 0;
+    color: #CC6600;
+    font-weight: bold;
+}
+
+/*print*/
+a.print {
+    background-image: url("../img/print-button-bg.png");
+    background-position: left top;
+    background-repeat: repeat-x;
+    border: 1px solid #34A7DB;
+    border-radius: 7px 7px 7px 7px;
+    color: #001F46;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 56px;
+    margin: 5px 0 0;
+    padding: 0;
+    width: 283px;
+}
+a.print:hover {
+    background-image: url("../img/print-button-bg.png");
+    background-position: left center;
+    background-repeat: repeat-x;
+    border: 1px solid #69B7DB;
+    color: #000000;
+    text-decoration: none;
+}
+a.print:active {
+    background-image: url("../img/print-button-bg.png");
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    border: 1px solid #34A7DB;
+    text-decoration: none;
+}
+a.print span {
+    background-image: url("../img/icon-print.png");
+    background-position: 12px 16px;
+    background-repeat: no-repeat;
+    display: block;
+    min-height: 58px;
+    padding: 3px 46px;
+    text-align: center;
+}
+a.print:hover span {
+    background-image: url("../img/icon-print-hover.png");
+    background-position: 12px 16px;
+    background-repeat: no-repeat;
+}
+.print-shift {
+    background-image: url("../img/print-button-bg.png");
+    background-position: left center;
+    background-repeat: repeat-x;
+    border: 1px solid #34A7DB;
+    border-radius: 7px 7px 7px 7px;
+    color: #FFFFFF;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    height: 65px;
+    /*height: 70px;*/
+    line-height: 56px;
+    margin: 5px 0 0;
+    padding: 0;
+    /*width: 283px;*/
+    width: 400px;
+}
+.print-shift:hover {
+    background-image: url("../img/print-button-bg.png");
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    border: 1px solid #69B7DB;
+}
+
+/* table info */
+.posko-table-info {
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+}
+.posko-table-info b {
+    color: #0E6390;
+}
+
+.posko-table-info tr {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px dotted #3294C8;
+}
+
+.posko-table-info tr:last-child {
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+}
+
+.posko-table-info td {
+    margin: 0;
+    padding: 6px;
+}
+
+.posko-table-info td a {
+    color: #006699;
+}
+
+.posko-table-info td.summary {
+    color: #666;
+}
+.table-posko th {
+    background: url("../img/table-view-th-bg-posko.png") repeat-x scroll left top #EBEBEB;
+    border: 1px solid #CDCDCD;
+    color: #272727;
+    font-family: "Open Sans","Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 4px 0;
+}
