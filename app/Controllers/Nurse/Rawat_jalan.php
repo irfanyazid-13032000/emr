@@ -298,10 +298,16 @@ class Rawat_jalan extends BaseController
         $data["ases2"] = $this->m_rawat_jalan->get_data_ases2_by_rg([$FS_KD_REG]);
         $data["nutrisi"] = $this->m_rawat_jalan->get_data_nutrisi_by_rg([$FS_KD_REG]);
         $data["geriatri"] = $this->m_rawat_jalan_nurse->get_data_geritri_by_rg([$FS_KD_REG]);
-        $data['tujuan'] = $this->m_rawat_jalan->list_masalah_kep();
+        // $data['tujuan'] = $this->m_rawat_jalan->list_masalah_kep();
+        $data['tujuan'] = $this->m_rawat_jalan->list_masalah_kep_by_rg($FS_KD_REG);
+        $tujuan_str = "";
+        foreach ($data['tujuan'] as $key => $value) {
+            $tujuan_str .= "'" . $value['FS_KD_MASALAH_KEP'] . "',";
+        }
+        $data['rs_tujuan'] = $tujuan_str;
         $data['tembusan'] = $this->m_rawat_jalan->list_rencana_kep();
-        $data['masalah'] = $this->m_rawat_jalan->get_data_masalah_by_rg([$FS_KD_REG])[0];
-        $data['rencana'] = $this->m_rawat_jalan_nurse->mencari_keperawatan([$FS_KD_REG])[0];
+        $data['masalah'] = $this->m_rawat_jalan->get_data_masalah_by_rg([$FS_KD_REG]);
+        $data['rencana'] = $this->m_rawat_jalan_nurse->mencari_keperawatan([$FS_KD_REG]);
 
 
 
@@ -309,7 +315,7 @@ class Rawat_jalan extends BaseController
 
 
         return view("nurse/rawat_jalan/edit", $data);
-        // return var_dump($data['geriatri']);
+        // return var_dump($data['nyeri']);
     }
 
     public function edit_process()

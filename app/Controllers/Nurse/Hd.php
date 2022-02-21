@@ -274,76 +274,87 @@ class Hd extends BaseController
         );
         $this->m_rawat_jalan->insert_nutrisi($params6);
 
-        $this->m_rawat_jalan->insert_masalah_kep(array($this->request->getVar('FS_KD_REG'), $masalah_kep = $this->request->getVar('tujuan')));
+        $masalah_kep = $this->request->getVar('tujuan');
+        if (!empty($masalah_kep)) {
+          foreach ($masalah_kep as $value) {
+            $this->m_rawat_jalan->insert_masalah_kep(array($this->request->getVar('FS_KD_REG'), $value));
+          }
+        }
 
 
-        $this->m_rawat_jalan->insert_rencana_kep(array($this->request->getVar('FS_KD_REG'), $this->request->getVar('tembusan')));
+        $rencana_kep = $this->request->getVar('tembusan');
+        if (!empty($rencana_kep)) {
+          foreach ($rencana_kep as $value) {
+            $this->m_rawat_jalan->insert_rencana_kep(array($this->request->getVar('FS_KD_REG'), $value));
+          }
+        }
 
         if ($this->request->getVar('informed_concent_tgl') == NULL) {
           $informed_concent_tgl = '';
         }
 
-        $instruksi_resepHD = '';
-        $instruksi_dialisat_asetat = '';
-        $instruksi_dialisat_conductivity = '';
-        $instruksi_dialisat_temperatur = '';
-        $instruksi_femoral = '';
-        $instruksi_HD_catheter = '';
-        $instruksi_dialisat_temperatur_text = '';
-        $instruksi_dosis_sirkulasi = '';
-        $instruksi_dosis_sirkulasi_text = '';
-        $instruksi_dosis_awal = '';
-        $instruksi_dosis_awal_text = '';
-        $instruksi_dosis_main = '';
-        $instruksi_dosis_maintenance = '';
-        $instruksi_dosis_main_intermitten_text = '';
-        $instruksi_LMWH = '';
-        $instruksi_LMWH_text = '';
-        $instruksi_tanpa_heparin = '';
-        $instruksi_program_bilas = '';
-        $instruksi_edukasi = '';
-        $instruksi_edukasi_text = '';
-        $instruksi_catatan_lain = '';
+        // $instruksi_resepHD = '';
+        // $instruksi_dialisat_asetat = '';
+        // $instruksi_dialisat_conductivity = '';
+        // // $instruksi_dialisat_temperatur = '';
+        // $instruksi_femoral = '';
+        // $instruksi_HD_catheter = '';
+        // $instruksi_dialisat_temperatur_text = '';
+        // $instruksi_dosis_sirkulasi = '';
+        // $instruksi_dosis_sirkulasi_text = '';
+        // $instruksi_dosis_awal = '';
+        // $instruksi_dosis_awal_text = '';
+        // $instruksi_dosis_main = '';
+        // $instruksi_dosis_maintenance = '';
+        // $instruksi_dosis_main_intermitten_text = '';
+        // $instruksi_LMWH = '';
+        // // $instruksi_LMWH_text = '';
+        // $instruksi_tanpa_heparin = '';
+        // $instruksi_program_bilas = '';
+        // $instruksi_edukasi = '';
+        // $instruksi_edukasi_text = '';
+        // $instruksi_catatan_lain = '';
 
         $params7 = array(
-          $this->request->getVar('FS_KD_REG'), // RG02484250
-          $this->request->getVar('tembusan'), // 1
-          $informed_concent_tgl, // string kosong
-          date('Y-m-d'), // 2022-02-11
-          $instruksi_resepHD, //string kosong
-          $this->request->getVar('instruksi_resepHD_TD'), // 5
-          $this->request->getVar('instruksi_resepHD_QB'), // 100
-          $this->request->getVar('instruksi_resepHD_QD'), // 500
-          $this->request->getVar('instruksi_resepHD_UFgoal'), // 100
+          $this->request->getVar('FS_KD_REG'),
+          $FS_KD_TRS,
+          $this->request->getVar('informed_concent_tgl'),
+          date('Y-m-d'),
+          $this->request->getVar('instruksi_resepHD'),
+          $this->request->getVar('instruksi_resepHD_TD'),
+          $this->request->getVar('instruksi_resepHD_QB'),
+          $this->request->getVar('instruksi_resepHD_QD'),
+          $this->request->getVar('instruksi_resepHD_UFgoal'),
           '',
           '',
           '',
-          $this->request->getVar('instruksi_av_fistula'), // 1
-          $instruksi_femoral, //string kosong
-          $instruksi_HD_catheter, // string kosong
-          $instruksi_dialisat_asetat, //string kosong
-          $this->request->getVar('instruksi_dialisat_bicarbonat'), // 1
-          $instruksi_dialisat_conductivity, //string kosong
-          $this->request->getVar('instruksi_dialisat_conductivity_text'), // 14
-          $instruksi_dialisat_temperatur, //string kosong
-          $instruksi_dialisat_temperatur_text, // string kosong
-          $instruksi_dosis_sirkulasi,
-          $instruksi_dosis_sirkulasi_text,
-          $instruksi_dosis_awal,
-          $instruksi_dosis_awal_text,
-          $instruksi_dosis_maintenance,
-          $instruksi_dosis_main,
+          $this->request->getVar('instruksi_av_fistula'),
+          $this->request->getVar('instruksi_femoral'),
+          $this->request->getVar('instruksi_HD_catheter'),
+          $this->request->getVar('instruksi_dialisat_asetat'),
+          $this->request->getVar('instruksi_dialisat_bicarbonat'),
+          $this->request->getVar('instruksi_dialisat_conductivity'),
+          $this->request->getVar('instruksi_dialisat_conductivity_text'),
+          $this->request->getVar('instruksi_dialisat_temperatur'),
+          $this->request->getVar('instruksi_dialisat_temperatur_text'),
+          $this->request->getVar('instruksi_dosis_sirkulasi'),
+          $this->request->getVar('instruksi_dosis_sirkulasi_text'),
+          $this->request->getVar('instruksi_dosis_awal'),
+          $this->request->getVar('instruksi_dosis_awal_text'),
+          $this->request->getVar('instruksi_dosis_maintenance'),
+          $this->request->getVar('instruksi_dosis_main'),
           $this->request->getVar('instruksi_dosis_main_continue_text'),
-          $instruksi_dosis_main_intermitten_text,
-          $instruksi_LMWH,
-          $instruksi_LMWH_text,
-          $instruksi_tanpa_heparin,
+          $this->request->getVar('instruksi_dosis_main_intermitten_text'),
+          $this->request->getVar('instruksi_LMWH'),
+          $this->request->getVar('instruksi_LMWH_text'),
+          $this->request->getVar('instruksi_tanpa_heparin'),
           $this->request->getVar('instruksi_tanpa_heparin_text'),
-          $instruksi_program_bilas,
-          $instruksi_edukasi,
-          $instruksi_edukasi_text,
-          $instruksi_catatan_lain,
-          session('user_id'),
+          $this->request->getVar('instruksi_program_bilas'),
+          $this->request->getVar('instruksi_edukasi'),
+          $this->request->getVar('instruksi_edukasi_text'),
+          $this->request->getVar('instruksi_catatan_lain'),
+
+          $this->com_user['user_id'],
           date('Y-m-d')
         );
         $this->m_rawat_jalan->insert_instruksi_medis($params7);
@@ -404,6 +415,7 @@ class Hd extends BaseController
   public function edit($FS_KD_REG = "")
   {
 
+
     $this->m_rawat_jalan = new \App\Models\M_rawat_jalan();
     $this->m_rawat_jalan_nurse = new \App\Models\M_rawat_jalan_nurse();
 
@@ -428,7 +440,7 @@ class Hd extends BaseController
     // notification
     // output
     return view('nurse/hd/edit', $data);
-    // return var_dump($data['result']['FS_KD_LAYANAN']);
+    // return var_dump($data['medis']);
   }
 
   public function edit_process()
@@ -770,31 +782,37 @@ class Hd extends BaseController
 
   public function list_masalah_kep()
   {
+    $this->m_rawat_jalan = new \App\Models\M_rawat_jalan();
+    $this->m_rawat_jalan_nurse = new \App\Models\M_rawat_jalan_nurse();
     $instansi = $this->m_rawat_jalan->list_masalah_kep();
     $data[] = array();
     $i = 0;
     foreach ($instansi as $key => $value) {
       $data[$i] = array(
-        'label' => $value['FS_NM_MASALAH_KEP'],
-        'value' => $value['FS_KD_TRS']
+        'text' => $value['FS_NM_DIAGNOSA'],
+        'id' => $value['FS_KD_DAFTAR_DIAGNOSA']
       );
       $i++;
     }
+    // $objek = ["results" => $data];
     echo json_encode($data);
   }
 
   public function list_rencana_kep()
   {
+    $this->m_rawat_jalan = new \App\Models\M_rawat_jalan();
+    $this->m_rawat_jalan_nurse = new \App\Models\M_rawat_jalan_nurse();
     $instansi = $this->m_rawat_jalan->list_rencana_kep();
     $data[] = array();
     $i = 0;
     foreach ($instansi as $key => $value) {
       $data[$i] = array(
-        'label' => $value['FS_NM_REN_KEP'],
-        'value' => $value['FS_KD_TRS']
+        'text' => $value['FS_NM_REN_KEP'],
+        'id' => $value['FS_KD_TRS']
       );
       $i++;
     }
+    // $objek = ["results" => $data];
     echo json_encode($data);
   }
 }
