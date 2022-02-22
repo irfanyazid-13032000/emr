@@ -1861,6 +1861,19 @@ class M_rawat_jalan
         }
     }
 
+    function queryPreselectTembusan($FS_KD_REN_KEP)
+    {
+        $sql = "SELECT * FROM TAC_COM_PARAM_REN_KEP WHERE FS_KD_TRS=$FS_KD_REN_KEP";
+        $query = $this->db->query($sql);
+        if ($query->getNumRows() > 0) {
+            $result = $query->getResultArray();
+            $query->freeResult();
+            return $result;
+        } else {
+            return array();
+        }
+    }
+
     function list_masalah_kep_by_rg($params)
     {
         $sql = "SELECT * FROM TAC_RJ_MASALAH_KEP WHERE FS_KD_REG = ?";
@@ -1873,6 +1886,33 @@ class M_rawat_jalan
             return array();
         }
     }
+
+    function queryPreselectTujuan($params)
+    {
+        $sql = "SELECT * FROM TAC_COM_DAFTAR_DIAG WHERE FS_KD_DAFTAR_DIAGNOSA = $params";
+        $query = $this->db->query($sql);
+        if ($query->getNumRows() > 0) {
+            $result = $query->getResultArray();
+            // $query->freeResult();
+            return $result;
+        } else {
+            return array();
+        }
+    }
+
+    function list_masalah_kep_lah()
+    {
+        $sql = "SELECT * FROM TAC_RJ_MASALAH_KEP";
+        $query = $this->db->query($sql);
+        if ($query->getNumRows() > 0) {
+            $result = $query->getResultArray();
+            $query->freeResult();
+            return $result;
+        } else {
+            return array();
+        }
+    }
+
     function list_intervensi_umum_by_rg($params)
     {
         $sql = "SELECT * FROM TAC_RJ_FISIO4 WHERE FS_KD_REG = ?";
@@ -1916,6 +1956,8 @@ class M_rawat_jalan
         //     return 'data Kosong';
         // };
     }
+
+
 
     function list_pemeriksaan_lab($params)
     {

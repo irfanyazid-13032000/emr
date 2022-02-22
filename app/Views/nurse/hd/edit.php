@@ -848,7 +848,15 @@
         <td width='20%'>Masalah Keperawatan</td>
         <td width='30%'>
           <select name="tujuan[]" multiple id="tujuan" style="width:250px">
-            <option></option>
+            <?php foreach ($tujuan as $tuju) : ?>
+              <?php foreach ($sama as $sam) : ?>
+                <?php if ($tuju["text"] == $sam["text"]) : ?>
+                  <option value="<?= $tuju['id'] ?>" selected><?= $tuju['text'] ?></option>
+                <?php else : ?>
+                  <option value="<?= $tuju['id'] ?>"><?= $tuju['text'] ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            <?php endforeach; ?>
           </select>
           <br>
           <em>*Bisa lebih dari satu, jika ada tambahan hub EDP</em>
@@ -856,7 +864,15 @@
         <td width='20%'>Rencana Keperawatan</td>
         <td width='30%'>
           <select name="tembusan[]" multiple id="tembusan" style="width:250px">
-            <option></option>
+            <?php foreach ($tembusan as $tembus) : ?>
+              <?php foreach ($kembar as $kem) : ?>
+                <?php if ($tembus["text"] == $kem["text"]) : ?>
+                  <option value="<?= $tembus['id'] ?>" selected><?= $tembus['text'] ?></option>
+                <?php else : ?>
+                  <option value="<?= $tembus['id'] ?>"><?= $tembus['text'] ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            <?php endforeach; ?>
           </select>
           <br>
           <em>*Bisa lebih dari satu, jika ada tambahan hub EDP</em>
@@ -970,21 +986,37 @@
 
 <script>
   $(document).ready(function() {
-    $('#tujuan').select2({
-      multiple: true,
-      ajax: {
-        url: "<?= site_url() ?>/nurse/hd/list_masalah_kep",
-        dataType: 'json'
-      }
-    });
+    //Set up the Select2 control
+    // $('#tujuan').select2({
+    //   ajax: {
+    //     url: "<//?= site_url('nurse/hd/list_masalah_kep/') ?>"
+    //   }
+    // });
 
-    $('#tembusan').select2({
-      ajax: {
-        url: "<?= site_url() ?>/nurse/hd/list_rencana_kep",
-        dataType: 'json'
-        // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
-      }
-    });
+    // // Fetch the preselected item, and add to the control
+    // var tujuan = $('#tujuan');
+    // $.ajax({
+    //   type: 'POST',
+    //   url: '<//?= site_url() ?>nurse/hd/ubahJsonPreselectTujuan/' + '<//?= $FS_KD_REG ?>'
+    // }).then(function(data) {
+    //   // create the option and append to Select2
+    //   var option = new Option(data.text, data.id, true, true);
+    //   tujuan.append(option).trigger('change');
+
+    //   // manually trigger the `select2:select` event
+    //   tujuan.trigger({
+    //     type: 'select2:select',
+    //     params: {
+    //       data: data
+    //     }
+    //   });
+    // });
+
+
+
+    $("#tujuan").select2({});
+    $("#tembusan").select2({});
+
   });
 </script>
 
