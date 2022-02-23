@@ -646,7 +646,7 @@ class M_rawat_jalan
             return array();
         }
     }
-    function get_dokter_keb($params)
+    function get_dokter_keb($params = [])
     {
         $sql = "SELECT a.FS_KD_PEG,a.FS_NM_PEG FROM
                 HOSPITAL.dbo.TD_PEG a

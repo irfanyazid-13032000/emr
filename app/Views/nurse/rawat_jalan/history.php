@@ -84,7 +84,7 @@
                 <th style="text-align: center;">Layanan</th>
                 <th style="text-align: center;">Catatan</th>
                 <th style="text-align: center;">Status</th>
-                <th width='35%' style="text-align: center;">Aksi</th>
+                <th width='40%' style="text-align: center;">Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -186,6 +186,8 @@
                                 <a href="<?php echo $awal ?>" class="button-edit">Awal</a>
                                 <?php $lanjut = site_url('nurse/rawat_jalan/add/' . $data['FS_KD_REG'] . '/' . $FS_KD_MEDIS . '/' . 'L') ?>
                                 <a href="<?php echo $lanjut ?>" class="button-edit">Lanjut</a>
+                                <?php $edit = site_url('nurse/rawat_jalan/edit/' . $data['FS_KD_REG']); ?>
+                                <a href="<?php echo $edit; ?>" class="button-edit">Edit</a>
                             <?php else : ?>
                                 <?php $edit = site_url('nurse/rawat_jalan/edit/' . $data['FS_KD_REG']); ?>
                                 <a href="<?php echo $edit; ?>" class="button-edit">Edit</a>

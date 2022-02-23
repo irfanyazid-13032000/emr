@@ -828,12 +828,38 @@
       <td width='20%'>Masalah Keperawatan</td>
       <td width='30%'>
         <select name="tujuan[]" multiple id="tujuan" style="width:250px">
+          <?php foreach ($tujuan as $tuju) : ?>
+            <?php if ($sama !== []) : ?>
+              <?php foreach ($sama as $sam) : ?>
+                <?php if ($tuju["text"] == $sam["text"]) : ?>
+                  <option value="<?= $tuju['id'] ?>" selected><?= $tuju['text'] ?></option>
+                <?php else : ?>
+                  <option value="<?= $tuju['id'] ?>"><?= $tuju['text'] ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            <?php else : ?>
+              <option value="<?= $tuju['id'] ?>"><?= $tuju['text'] ?></option>
+            <?php endif; ?>
+          <?php endforeach; ?>
         </select>
+        <br>
       </td>
       <td width='20%'>Rencana Keperawatan</td>
       <td width='30%'>
         <select name="tembusan[]" multiple id="tembusan" style="width:250px">
-
+          <?php foreach ($tembusan as $tembus) : ?>
+            <?php if ($kembar !== []) : ?>
+              <?php foreach ($kembar as $kem) : ?>
+                <?php if ($tembus["text"] == $kem["text"]) : ?>
+                  <option value="<?= $tembus['id'] ?>" selected><?= $tembus['text'] ?></option>
+                <?php else : ?>
+                  <option value="<?= $tembus['id'] ?>"><?= $tembus['text'] ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            <?php else : ?>
+              <option value="<?= $tembus['id'] ?>"><?= $tembus['text'] ?></option>
+            <?php endif; ?>
+          <?php endforeach; ?>
         </select>
       </td>
     </tr>
@@ -853,22 +879,8 @@
 
 <script>
   $(document).ready(function() {
-    $('#tujuan').select2({
-      ajax: {
-        url: "<?= site_url() ?>/nurse/hd/list_masalah_kep",
-        dataType: 'json',
-
-      }
-    });
-
-
-    $('#tembusan').select2({
-      ajax: {
-        url: "<?= site_url() ?>/nurse/hd/list_rencana_kep",
-        dataType: 'json'
-        // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
-      }
-    });
+    $('#tujuan').select2({});
+    $('#tembusan').select2({});
   });
 </script>>
 

@@ -187,21 +187,21 @@ class M_rawat_jalan_nurse
         }
     }
 
-    function mencari_keperawatan($params)
-    {
-        $sql = "SELECT * FROM
-        TAC_RJ_REN_KEP
-        INNER JOIN TAC_COM_PARAM_REN_KEP ON TAC_RJ_REN_KEP.FS_KD_REN_KEP=TAC_COM_PARAM_REN_KEP.FS_KD_TRS 
-        WHERE TAC_RJ_REN_KEP.FS_KD_REG = ?";
-        $query = $this->db->query($sql, $params);
-        if ($query->getNumRows() > 0) {
-            $result = $query->getResultArray();
-            $query->freeResult();
-            return $result;
-        } else {
-            return array();
-        }
-    }
+    // function mencari_keperawatan($params)
+    // {
+    //     $sql = "SELECT * FROM
+    //     TAC_RJ_REN_KEP
+    //     INNER JOIN TAC_COM_PARAM_REN_KEP ON TAC_RJ_REN_KEP.FS_KD_REN_KEP=TAC_COM_PARAM_REN_KEP.FS_KD_TRS 
+    //     WHERE TAC_RJ_REN_KEP.FS_KD_REG = ?";
+    //     $query = $this->db->query($sql, $params);
+    //     if ($query->getNumRows() > 0) {
+    //         $result = $query->getResultArray();
+    //         $query->freeResult();
+    //         return $result;
+    //     } else {
+    //         return array();
+    //     }
+    // }
 
     function mencari_kebenaran($params)
     {

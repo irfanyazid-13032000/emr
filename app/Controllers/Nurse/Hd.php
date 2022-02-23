@@ -489,6 +489,7 @@ class Hd extends BaseController
     }
 
 
+    $tujuanPreselect = [];
 
     for ($i = 0; $i < count($preselectTujuan); $i++) {
 
@@ -499,7 +500,6 @@ class Hd extends BaseController
         );
       }
     }
-
     return $tujuanPreselect;
   }
 
@@ -533,18 +533,19 @@ class Hd extends BaseController
       $preselectTembusan[] = $this->m_rawat_jalan->queryPreselectTembusan($tembus['FS_KD_REN_KEP']);
     }
 
+    $tembusanPreselect = [];
 
 
     for ($i = 0; $i < count($preselectTembusan); $i++) {
       foreach ($preselectTembusan[$i] as $key => $value) {
-        $tujuanPreselect[$i] = array(
+        $tembusanPreselect[$i] = array(
           'text' => $value['FS_NM_REN_KEP'],
           'id' => $value['FS_KD_TRS']
         );
       }
     }
 
-    return $tujuanPreselect;
+    return $tembusanPreselect;
   }
 
 

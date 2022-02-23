@@ -7,7 +7,114 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script type="text/javascript" src="<?= site_url() ?>resource/js/jquery/jquery-ui-timepicker-addon.js"></script>
 
+<script type="text/javascript">
+  $(document).ready(function() {
+    score();
+    $("#op1").change(function() {
+      var sc = $(this).val();
+      $("#sc1").html(sc);
+      score();
+    });
+    $("#op2").change(function() {
+      var sc = $(this).val();
+      $("#sc2").html(sc);
+      score();
+    });
+    $("#op3").change(function() {
+      var sc = $(this).val();
+      $("#sc3").html(sc);
+      score();
+    });
+    $("#sn1").change(function() {
+      var sn = $(this).val();
+      $("#snh1").html(sn);
+      score_sn();
+    });
+    $("#sn2").change(function() {
+      var sn = $(this).val();
+      $("#snh2").html(sn);
+      score_sn();
+    });
+    $("#sna1").change(function() {
+      var sna = $(this).val();
+      $("#snha1").html(sna);
+      score_sna();
+    });
+    $("#sna2").change(function() {
+      var sna = $(this).val();
+      $("#snha2").html(sna);
+      score_sna();
+    });
+    $("#sna3").change(function() {
+      var sna = $(this).val();
+      $("#snha3").html(sna);
+      score_sna();
+    });
+    $("#sna4").change(function() {
+      var sna = $(this).val();
+      $("#snha4").html(sna);
+      score_sna();
+    });
+    $("#gr1").change(function() {
+      var scgr = $(this).val();
+      $("#scgr1").html(scgr);
+      scoregr();
+    });
+    $("#gr2").change(function() {
+      var scgr = $(this).val();
+      $("#scgr2").html(scgr);
+      scoregr();
+    });
+    $("#gr3").change(function() {
+      var scgr = $(this).val();
+      $("#scgr3").html(scgr);
+      scoregr();
+    });
+  });
+</script>
+<script type="text/javascript">
+  function score() {
+    var sc = parseInt($("#sc1").text()) + parseInt($("#sc2").text()) + parseInt($("#sc3").text());
+    $("#totalsc").html(sc);
+    if (sc >= 45) {
+      $("#rjtkesimpulan").html(">=45 (RISIKO TINGGI)");
+    } else if (sc >= 25 && sc <= 44) {
+      $("#rjtkesimpulan").html("25-44 (risiko rendah)");
+    } else if (sc <= 24) {
+      $("#rjtkesimpulan").html("0-24 (TIDAK ADA RISIKO)");
+    }
+  }
 
+  function score_sn() {
+    var sn = parseInt($("#snh1").text()) + parseInt($("#snh2").text());
+    $("#totalsn").html(sn);
+    if (sn >= 2) {
+      $("#kesimpulansn").html("LAPORKAN KE DOKTER");
+    } else if (sn < 2) {
+      $("#kesimpulansn").html("NORMAL");
+    }
+  }
+
+  function score_sna() {
+    var sna = parseInt($("#snha1").text()) + parseInt($("#snha2").text()) + parseInt($("#snha3").text()) + parseInt($("#snha4").text());
+    $("#totalsna").html(sna);
+    if (sna >= 1) {
+      $("#kesimpulansna").html("LAPORKAN KE DOKTER");
+    } else if (sna <= 0) {
+      $("#kesimpulansna").html("NORMAL");
+    }
+  }
+
+  function scoregr() {
+    var scgr = parseInt($("#scgr1").text()) + parseInt($("#scgr2").text()) + parseInt($("#scgr3").text());
+    $("#totalscgr").html(scgr);
+    if (scgr >= 1) {
+      $("#rjtkesimpulangr").html("BERI PELAYANAN KHUSUS TANPA ANTRI");
+    } else {
+      $("#rjtkesimpulangr").html("");
+    }
+  }
+</script>
 
 
 <div class="breadcrum">

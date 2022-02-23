@@ -298,16 +298,48 @@ class Rawat_jalan extends BaseController
         $data["ases2"] = $this->m_rawat_jalan->get_data_ases2_by_rg([$FS_KD_REG]);
         $data["nutrisi"] = $this->m_rawat_jalan->get_data_nutrisi_by_rg([$FS_KD_REG]);
         $data["geriatri"] = $this->m_rawat_jalan_nurse->get_data_geritri_by_rg([$FS_KD_REG]);
-        // $data['tujuan'] = $this->m_rawat_jalan->list_masalah_kep();
-        $data['tujuan'] = $this->m_rawat_jalan->list_masalah_kep_by_rg($FS_KD_REG);
-        $tujuan_str = "";
-        foreach ($data['tujuan'] as $key => $value) {
-            $tujuan_str .= "'" . $value['FS_KD_MASALAH_KEP'] . "',";
+
+
+        // get all instansi tujuan ========================================================================================
+
+        $data['tujuan'] = $this->getAllMasalah();
+
+
+        // melakukan query pada database untuk mengetahui value yang sudah di select 
+        $data['preselectTujuan'] = $this->preselectTujuan($FS_KD_REG);
+
+        // mencari value yang telah dipilih sebelummnya
+        $data['sama'] = [];
+        for ($i = 0; $i < count($data['tujuan']); $i++) {
+            for ($j = 0; $j < count($data['preselectTujuan']); $j++) {
+                if ($data['tujuan'][$i]["text"] == $data['preselectTujuan'][$j]["text"]) {
+                    $data['sama'][] = ["id" => $data['tujuan'][$i]["id"], "text" => $data['tujuan'][$i]["text"]];
+                }
+            }
         }
-        $data['rs_tujuan'] = $tujuan_str;
-        $data['tembusan'] = $this->m_rawat_jalan->list_rencana_kep();
-        $data['masalah'] = $this->m_rawat_jalan->get_data_masalah_by_rg([$FS_KD_REG]);
-        $data['rencana'] = $this->m_rawat_jalan_nurse->mencari_keperawatan([$FS_KD_REG]);
+        // end tujuan ================================================================================================
+
+
+
+        $data["tembusan"] = $this->getAllRencana();
+        $data['preselectTembusan'] = $this->preselectTembusan($FS_KD_REG);
+
+        // mencari value tembusan yang telah dipili sebelumnya
+        $data['kembar'] = [];
+        for ($k = 0; $k < count($data["tembusan"]); $k++) {
+            for ($l = 0; $l < count($data["preselectTembusan"]); $l++) {
+                if ($data["tembusan"][$k]["text"] == $data["preselectTembusan"][$l]["text"]) {
+                    $data["kembar"][] =
+                        ["id" => $data['tembusan'][$k]["id"], "text" => $data['tembusan'][$k]["text"]];
+                }
+            }
+        }
+
+
+
+        // $data['tembusan'] = $this->m_rawat_jalan->list_rencana_kep();
+        // $data['masalah'] = $this->m_rawat_jalan->get_data_masalah_by_rg([$FS_KD_REG]);
+        // $data['rencana'] = $this->m_rawat_jalan_nurse->mencari_keperawatan([$FS_KD_REG]);
 
 
 
@@ -315,8 +347,100 @@ class Rawat_jalan extends BaseController
 
 
         return view("nurse/rawat_jalan/edit", $data);
-        // return var_dump($data['nyeri']);
+        // return var_dump($data['tujuan']);
     }
+
+
+    public function preselectTujuan($FS_KD_REG)
+    {
+        $this->m_rawat_jalan = new \App\Models\M_rawat_jalan();
+        $this->m_rawat_jalan_nurse = new \App\Models\M_rawat_jalan_nurse();
+
+        $tujuan = $this->m_rawat_jalan->list_masalah_kep_by_rg($FS_KD_REG);
+        $preselectTujuan = [];
+        foreach ($tujuan as $tuju) {
+            $preselectTujuan[] = $this->m_rawat_jalan->queryPreselectTujuan($tuju['FS_KD_MASALAH_KEP']);
+        }
+
+        $tujuanPreselect = [];
+
+        for ($i = 0; $i < count($preselectTujuan); $i++) {
+
+            foreach ($preselectTujuan[$i] as $key => $value) {
+                $tujuanPreselect[$i] = array(
+                    'text' => $value['FS_NM_DIAGNOSA'],
+                    'id' => $value['FS_KD_DAFTAR_DIAGNOSA']
+                );
+            }
+        }
+
+        return $tujuanPreselect;
+    }
+    public function getAllMasalah()
+    {
+        $this->m_rawat_jalan = new \App\Models\M_rawat_jalan();
+        $this->m_rawat_jalan_nurse = new \App\Models\M_rawat_jalan_nurse();
+        $instansi = $this->m_rawat_jalan->list_masalah_kep();
+        $data[] = array();
+        $i = 0;
+        foreach ($instansi as $key => $value) {
+            $data[$i] = array(
+                'text' => $value['FS_NM_DIAGNOSA'],
+                'id' => $value['FS_KD_DAFTAR_DIAGNOSA']
+            );
+            $i++;
+        }
+        // $objek = ["results" => $data];
+        return $data;
+    }
+
+    public function preselectTembusan($FS_KD_REG)
+    {
+        $this->m_rawat_jalan = new \App\Models\M_rawat_jalan();
+        $this->m_rawat_jalan_nurse = new \App\Models\M_rawat_jalan_nurse();
+
+        $tembusan = $this->m_rawat_jalan->list_rencana_kep_by_rg($FS_KD_REG);
+        $preselectTembusan = [];
+        foreach ($tembusan as $tembus) {
+            $preselectTembusan[] = $this->m_rawat_jalan->queryPreselectTembusan($tembus['FS_KD_REN_KEP']);
+        }
+
+        $tembusanPreselect = [];
+
+
+        for ($i = 0; $i < count($preselectTembusan); $i++) {
+            foreach ($preselectTembusan[$i] as $key => $value) {
+                $tembusanPreselect[$i] = array(
+                    'text' => $value['FS_NM_REN_KEP'],
+                    'id' => $value['FS_KD_TRS']
+                );
+            }
+        }
+
+        return $tembusanPreselect;
+    }
+
+    public function getAllRencana()
+    {
+        $this->m_rawat_jalan = new \App\Models\M_rawat_jalan();
+        $this->m_rawat_jalan_nurse = new \App\Models\M_rawat_jalan_nurse();
+        $instansi = $this->m_rawat_jalan->list_rencana_kep();
+        $data[] = array();
+        $i = 0;
+        foreach ($instansi as $key => $value) {
+            $data[$i] = array(
+                'text' => $value['FS_NM_REN_KEP'],
+                'id' => $value['FS_KD_TRS']
+            );
+            $i++;
+        }
+        // $objek = ["results" => $data];
+        return $data;
+    }
+
+
+
+
 
     public function edit_process()
     {
